@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><%= ID %></h1>
-    <% 
-        switch (msg.toLowerCase()) {
-            case "hola":
-                %><h1><%= msg %> <%=ID%></h1><%
+    <h1><%= ID /* Recibimos el ID y lo mostramos con < %= */ %></h1> 
+    <% //Usamos < % cuando no queremos mostar una variable y queremos colocar codigo de javascript
+        switch (msg.toLowerCase()) { // funcion para convertir el string a minusculas
+            case "hola": //validamos cada uno de los casos para verificar que sea un mensaje como Hola,Adios y bienvenido
+                %><h1><%= msg %> <%=ID%></h1><%//En caso que si coincida el query string msg entonces se mostrara el mensaje y el id y se enlistara con un for usando times de la query string
                 for (let i = 1; i <= times; i++) { %>
                     <li><%= msg %> <%=ID%></li>
                 <% }
@@ -30,9 +30,5 @@
                 break;
         }
     %>
-    <ul>
-        
-    </ul>
-
 </body>
 </html>
